@@ -1,0 +1,69 @@
+---
+title: "Class 12"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Prep for docking
+
+```{r}
+library(bio3d)
+file <- get.pdb("1hsg")
+pdb <- read.pdb(file)
+prot <- atom.select(pdb, "protein", value=TRUE)
+write.pdb(prot, file="1hsg_protein.pdb")
+```
+
+```{r}
+lig <- atom.select(pdb, "ligand", value = T)
+write.pdb(lig, file = "1hsg_ligand.pdb")
+```
+
+##  Q2: Can you locate the binding site visually? Note that crystal structures normally lack hydrogen atoms, why?
+
+### Yes. The binding site for this protein is represented with yellow bonds. Crystal structures normally lack hydrogen atoms because H atoms are small, and many are present in a structure. So when graphically represented, they can be a bit messy and hard to understand, and that's why H atoms are not represented by default.
+
+
+# The .pdbqt file allows for a more in depth look into the atoms of the pdb. As in, the pdbqt files list the charges, atom types, etc. on the file itself.
+
+
+## Q3: Look at the charges. Does it make sense (e.g. based on your knowledge of the physiochemical properties of amino acids)?
+
+### Yes it makes sense. For instance, N (Asparagine) is listed as a negative charge. Asparagine is a polar AA, existing as either a proton donator or an acceptor. The negative charge denotes that Asparagine is a proton acceptor.
+
+# Accessing the allpdbqt file.
+
+```{r}
+res <- read.pdb ("all.pdbqt", multi = T)
+
+write.pdb(res, "results.pdb")
+```
+
+##  Q4: Qualitatively, how good are the docks? Is the crystal binding mode reproduced? Is it the best conformation according to AutoDock Vina?
+
+### The VMD loops 14 times, and that's for each active "torsions" denoted in the all.pdbqt file. A high affinity ligand is not optimal - they are toxic, non-binding, and difficult to synthesize.
+
+
+```{r}
+res <- read.pdb("all.pdbqt", multi = T)
+ori <- read.pdb("1hsg_ligand.pdbqt")
+rmsd(ori, res)
+```
+
+
+
+## Normal mode analysis in Bio3D.
+
+```{r}
+pdb <- read.pdb("1hel")
+modes <- nma(pdb)
+plot(modes, sse = pdb)
+mktrj(modes, mode = 7, file = "nma.pdb")
+
+
+```
+
+
