@@ -1,0 +1,295 @@
+---
+title: "class14"
+author: "Sanghun Lee"
+date: "5/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Asthma and RNA-seq usage
+
+```{r}
+counts <- read.csv("airway_scaledcounts.csv", stringsAsFactors = F)
+meta <- read.csv("airway_metadata.csv", stringsAsFactors = F)
+
+head(counts)
+head(meta)
+```
+
+## Toy differential gene expression.
+### *note that this analysis is for demonstration only, and NOT for differential expression analysis.*
+
+```{r}
+View(meta) # Viewing our meta data.
+
+control <- meta[meta[, "dex"] == "control", ]
+control.mean <- rowSums(counts[, control$id]) / length(control$id)
+names(control.mean) <- counts$ensgene
+```
+
+#Q1. How would you make the above code more robust? What would happen if you were to add more samples. Would the values obtained with the excat code above be correct?
+
+## If I added more samples, I would need to increase the "4" in control.mean to accomodate for the number of samples that I added. Currently, there are 4 controls in the counts dataframe.
+
+## The values should be correct. I wouldn't see why not.
+
+
+
+#Q2. Follow the same procedure for the treated samples (i.e. calculate the mean per gene accross drug treated samples and assign to a labeled vector called treated.mean)
+
+
+```{r}
+treated <- meta[meta[, "dex"] == "treated", ] # Calls on the meta dataframe, checks the column named "dex", for datas named "treated."
+
+treated.mean <- rowSums(counts[, treated$id]) / length(treated$id)
+#counts[, treated$id] will access the counts dataframe, and take the IDs defined by the treated or control dataframe. These patient IDs have different values in the counts dataframe, and rowSums will take the average of those values.
+names(treated.mean) <- counts$ensgene
+
+```
+
+```{r}
+meancounts <- data.frame(control.mean, treated.mean)
+View(meancounts)
+
+colSums(meancounts)
+```
+
+
+#Q3. Create a scatter plot showing the mean of the treated samples against the mean of the control samples. Your plot should look something like the following.
+
+
+```{r}
+colorVector <- c("blue3", "red3") #treated is red, control is blue.
+plot(control.mean,treated.mean ,
+     main = "treated.mean vs control.mean",
+     col = colorVector,
+     xlab = "log Control",
+     ylab = "log Treated",
+     log = "xy")
+```
+
+### Adding some log2 columns into our meancounts dataframe.
+
+```{r}
+meancounts$log2fc <- log2(meancounts[,"treated.mean"] / meancounts[,"control.mean"])
+head(meancounts)
+```
+
+### Removing junk data, such as NaN or Inf.
+
+```{r}
+zero.vals <- which(meancounts[,1:2] == 0, arr.ind = T)
+zero.vals1 <- which(meancounts[,1:2] == 0, arr.ind = F)
+#Look at meancounts. Look at columns 1 thru 2 (control.means and treated.means.). Which of them yield zeroes? Return the array index.
+
+# Array.index = F yields the index number of these values, and only that. It is extremely confusing to visualize.
+
+zero.vals
+
+to.remove <- unique(zero.vals[,1])
+to.remove
+
+mycounts <- meancounts[-to.remove, ]
+# to.remove <- unique(zero.vals[,1]) yields the index number of the datas that need removing. This may look similar to the zero.vals1, which has arr.ind = F, but zero.vals1 did not remove any duplicated results from the data frame itself, so it may double count some data in the frame.
+head(mycounts)
+```
+
+#Q4. What is the purpose of the arr.ind argument in the which() function call above? Why would we then take the first column of the output and need to call the unique() function?
+
+## Array.index = F yields the index number of these values, and only that. It is extremely confusing to visualize.
+
+## to.remove <- unique(zero.vals[,1]) yields the index number of the datas that need removing. This may look similar to the zero.vals1, which has arr.ind = F, but zero.vals1 did not remove any duplicated results from the data frame itself, so it may double count some data in the frame.
+
+
+### Coding for upregulation and downregulation with log2.
+
+```{r}
+up.ind <- mycounts$log2fc > 2
+down.ind <- mycounts$log2fc < (-2)
+```
+
+#Q5. Using the up.ind and down.ind vectors above can you determine how many up and down regulated genes we have at the greater than 2 fc level?
+
+```{r}
+sum(up.ind)
+sum(down.ind)
+
+# Since T and F are denoted as 1s and 0s respectively, to count the number of 1, just sum up the vector.
+```
+
+## Adding Annotations for these genes
+```{r}
+anno <- read.csv("annotables_grch38.csv")
+
+head(anno)
+
+```
+
+#Q6. From consulting the help page for the merge() function can you set the by.x and by.y arguments appropriately to annotate our mycounts data.frame with all the available annotation data in your anno data.frame?
+
+
+```{r}
+merge(mycounts, anno, by.x = "row.names" , by.y = "ensgene" )
+```
+
+```{r}
+columns(org.Hs.eg.db)
+
+mycounts$symbol <- mapIds( org.Hs.eg.db,
+  keys = row.names(mycounts),
+  column = "SYMBOL",
+  keytype = "ENSEMBL",
+  multiVals = "first")
+```
+
+#Q7. Run the mapIds() function two more times to add the Entrez ID and UniProt accession as new columns called mycounts$entrez and mycounts$uniprot. The head() of your results should look like the following:
+
+
+```{r}
+mycounts$entrez <- mapIds(
+  org.Hs.eg.db,
+  keys = row.names(mycounts),
+  column = "ENTREZID",
+  keytype = "ENSEMBL",
+  multiVals = "first"
+)
+
+mycounts$uniprot <- mapIds(
+  org.Hs.eg.db,
+  keys = row.names(mycounts),
+  column = "UNIPROT",
+  keytype = "ENSEMBL",
+  multiVals = "first"
+)
+
+mycounts
+```
+
+
+#Q8. Examine your annotated results for those genes with a log2(FoldChange) of greater than 2 (or less than -2 if you prefer) with the View() function. What do you notice? Would you trust these results? Why or why not?
+
+```{r}
+head(mycounts[up.ind,])
+```
+
+## It seems to return the correct data with the correct values, so I would trust it.
+## head(mycounts[up.ind,]) applies the up.ind logical vector to mycounts, and if true, shows me the patient number and the values associated with it. The condition I used to yield logicals in up.ind is aforementioned.
+
+
+
+## Importing data and setting up objects.
+
+```{r}
+dds <- DESeqDataSetFromMatrix(
+  countData = counts,
+  colData = meta,
+  design = ~dex,
+  tidy = T
+)
+
+dds
+```
+
+## DESeq pipelines
+
+```{r}
+sizeFactors(dds) #yields NULL. This will be run with DESeq() anyway, so just...
+
+dds <- DESeq(dds) #do it like this. Run DESeq on dds, then assign it back to dds.
+
+res <- results(dds)
+summary(res)
+
+res05 <- results(dds, alpha = 0.05) # Sets the cutoff value at 0.05.
+summary(res05)
+```
+
+## Ordering our table by the p-value
+```{r}
+resOrdered <- res[order(res$pvalue),]
+
+resOrdered$pvalue
+
+resSig05 <- subset(as.data.frame(res), padj < 0.05)
+nrow(resSig05)
+```
+
+## Sorting or ordering our results by the adjusted p-value
+```{r}
+x <- c(1,5,3,2)
+sort(x) # Sorts the data from small to large.
+order(x) # Assigns an index number from 1 to length(x) as according to the size of the values in x.
+
+x[order(x)] # sort, but using the order function.
+
+ord <- order(resSig01$padj)
+write.csv(resSig01[ord,], file = "signif01.results.csv")
+
+```
+
+
+# Q9. How many are significant with an adjusted p-value < 0.05? How about 0.01? Save this last set of results as resSig01.
+
+## 2181 inputs are significant with an adjusted p-value of < 0.05.
+## 1437 inputs are significant with ad adjusted p-value of < 0.01.
+
+```{r}
+resSig01 <- subset(as.data.frame(res), padj < 0.01)
+nrow(resSig01)
+```
+
+
+## Volcano plots
+
+```{r}
+res$sig <- res$padj < 0.05 & abs(res$log2FoldChange) > 2
+
+table(res$sig) # How many of each?
+
+sum(is.na(res$sig))
+```
+
+## Plotting our volcano.
+
+```{r}
+palette(c("gray", "blue"))
+plot(res$log2FoldChange, -log(res$padj),
+     col = res$sig+1,
+     ylab = "-Log(pvalue)",
+     xlab = "Log2(FoldChange")
+
+# Cutoff line
+abline(v = c(-2, 2), lty = 2, col = 'darkgray')
+abline(h = -log(0.1), col = 'darkgray', lty = 2)
+
+palette('default')
+```
+
+## Plotting our volcano so that the colors indicate statistically significant value.
+```{r}
+# Setup our custom point color vector 
+mycols <- rep("gray", nrow(res))
+mycols[ abs(res$log2FoldChange) > 2 ]  <- "red" 
+
+inds <- (res$padj < 0.01) & (abs(res$log2FoldChange) > 2 )
+mycols[ inds ] <- "blue"
+
+#Volcano plot with custom colors 
+plot( res$log2FoldChange,  -log(res$padj), 
+ col=mycols, ylab="-Log(P-value)", xlab="Log2(FoldChange)" )
+
+abline(v=c(-2,2), col="gray", lty=2)
+abline(h=-log(0.1), col="gray", lty=2)
+
+```
+
+## Now representing this via ggplot.
+
+```{r}
+ggplot(as.data.frame(res), aes(log2FoldChange, -log10(pvalue), col = sig)) + geom_point()+
+  ggtitle("Volcano Plot")
+```
+
