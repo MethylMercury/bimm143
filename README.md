@@ -7,3 +7,5 @@ This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm1
 - class 06: R graphics, generating plots with R
 
 - class 07: (description of class 07.)
+
+- class 10: [description of class 10.] (link to take the person to class 10)
