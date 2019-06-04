@@ -6,6 +6,6 @@ This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm1
 
 - class 06: [R graphics, generating plots with R](https://github.com/chrislee3001/bimm143/blob/master/class06/class_06.pdf)
 
-- class 07: (description of class 07.)
+- class 07: [Writing R functions with CRAN packages](https://htmlpreview.github.io/?https://github.com/chrislee3001/bimm143/blob/master/class07/class07.html)
 
 - class 10: [description of class 10.] (link to take the person to class 10)
