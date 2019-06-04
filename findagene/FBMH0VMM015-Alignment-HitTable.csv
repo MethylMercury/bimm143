@@ -1,0 +1,4 @@
+Query Strain,Compared Strain,Percen. Identity,Length,Discrepancies between Query,Gaps,# of matches,Expect,Score,Positives
+NP_004514.2,XP_003825410.1,99.905,1056,1,0,1,0,2159,99.91
+NP_004514.2,XP_507923.4,99.811,1056,2,0,1,0,2157,99.91
+NP_004514.2,XP_002821023.1,98.295,1056,18,0,1,0,2126,99.15
