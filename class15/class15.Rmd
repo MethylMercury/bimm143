@@ -1,0 +1,75 @@
+---
+title: "class15"
+author: "The Spanish Inquisition"
+date: "5/21/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Trimming data
+```{r}
+metaFile <- "GSE37704_metadata.csv"
+
+countFile <- "GSE37704_featurecounts.csv"
+
+colData = read.csv(metaFile, row.names=1)
+head(colData)
+
+
+countData <- read.csv(countFile, row.name = 1)
+head(countData)
+
+countData <- as.matrix(countData[, -1])
+head(countData)
+```
+
+
+### Running DESeq2
+```{r}
+dds <- DESeqDataSetFromMatrix(countData = countData,
+                              colData = colData,
+                              design = ~condition)
+dds <- DESeq(dds)
+dds
+
+```
+
+```{r}
+res <- results(dds, contrast = c("condition", "hoxa1_kd", "control_sirna"))
+
+
+summary(res)
+#### Data is a bit coarse as I have not removed the zero values from the original countData set.
+```
+
+
+```{r}
+plot(res$log2FoldChange, -log(res$padj))
+
+mycols <- rep("gray", nrow(res))
+
+#color red the genes with absolute fold change above 2.
+mycols[abs(res$log2FoldChange) > 2] <- "red"
+
+#color blue those with p-value less than 0.01.
+
+inds <- pnorm(res$log2FoldChange) & (abs(res$log2FoldChange) > 2)
+mycols[inds] <- "blue"
+
+plot(res$log2FoldChange, -log(res$padj), col = mycols,
+     xlab = "Log2FoldChange",
+     ylab = "-Log(P-value)")
+```
+
+
+
+```{r}
+library("AnnotationDbi")
+library("org.H.eg.db")
+
+columns(org.Hs.eg.db)
+```
+
