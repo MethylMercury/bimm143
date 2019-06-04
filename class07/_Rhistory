@@ -1,0 +1,203 @@
+knitr::opts_chunk$set(echo = TRUE)
+rescale(1:10)
+---
+title: 'Class 7: R function and packages'
+author: "The Spanish Inquisition"
+date: "April 23, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Functions revisited
+We will source a file from online with our functions from last day
+```{r}
+source("http://tinyurl.com/rescale-R")
+```
+Try out the last day's rescale() function
+```{r}
+rescale(1:10)
+```
+rescale(1:10)
+rescale(c(1:10), "string")
+rescale2(c(1:10), "string")
+rescale2(c(1:10), "string")
+rescale2(c(1:10), "string")
+x <- c(1, 2, NA, 3, NA)
+y <- c(NA, 3, NA, 3, 4)
+is.na(x)
+is.na(y)
+is.na(x) & is.na(y)
+is.na(x) | is.na(y)
+sum(is.na(x) & is.na(y))
+both_na <- function(x, y){
+sum(is.na(x) & is.na(y))
+}
+x <- c(NA, NA, NA)
+y1 <- c(1< NA, NA)
+y2 <- c(1, NA, NA, NA)
+both_na(x, y2)
+x <- c(NA, NA, NA)
+y1 <- c(1< NA, NA)
+y2 <- c(1, NA, NA, NA)
+y3 <- c(1, NA, NA, NA, NA, NA, NA)
+both_na(x, y3)
+both_na2
+both_na3
+3 == 3
+3 >2
+3 != 2
+both_na2(x, y2)
+which(is.na(c(1, 2, NA, 4)))
+which( c (F, F, T, F, T))
+both_na3(x, y)
+x <- c(1, 2, NA, 3, NA)
+y <- c(NA, 3, NA, 3, 4)
+both_na3(x, y)
+df
+df1
+df2
+View(df1)
+View(df2)
+df1
+df2
+df1
+df2
+x <- df1$IDs
+y <- df2$IDs
+x <- df1$IDs
+y <- df2$IDs
+x
+y
+x <- df1$IDs
+y <- df2$IDs
+x
+y
+isTRUE(x)
+x <- df1$IDs
+y <- df2$IDs
+x
+y
+isTRUE(c(x))
+x <- df1$IDs
+y <- df2$IDs
+x
+y
+intersect(x, y)
+x %in% y
+which(x %in% y)
+[x %in% y]
+x[x %in% y]
+cbind( x[x %in% y]
+y[y %in% x])
+cbind( x[x %in% y],
+y[y %in% x])
+gene_intersect <- function(x, y) {
+cbind( x[x %in% y],
+y[y %in% x])
+}
+gene_intersect2(df1, df2)
+gene_intersect3(df1, df2)
+gene_intersect3
+gene_intersect4(df1, df2)
+gene_intersect4
+gene_intersect4(df1, df3)
+merge(df1, df2, by = "IDs")
+?is.min
+?is
+?min
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+min(Sarah)
+min(Andy)
+?mea
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+mean(x1)
+return(x1)
+}
+grade(Andy)
+mean
+min(Andy)
+x1 <- Andy[Andy!=min(Andy)]
+x1
+mean(x1)
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+mean(x1)
+}
+grade(Andy)
+grade(Sarah)
+min(Sarah)
+x1 <- Sarah[Sarah!=min(Sarah)]
+Sarah
+x1
+mean(x1)
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+paste("The average grade for" x, "is:", mean(x1))
+```{r}
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+paste("The average grade for" "x", "is:", mean(x1))
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+paste("The average grade for x", "is:", mean(x1))
+}
+grade(Andy)
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+paste("The average grade for", x, "is:", mean(x1))
+}
+grade(Andy)
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+paste("The average grade is:", mean(x1))
+}
+grade(Andy)
+grade(Sarah)
+x1
+mean(X1)
+mean(x1)
+x1 <- 92.42857
+round(x1)
+?round
+round(x1, digits = 2)
+Andy <- c(100, 100, 100, 100, 100, 100, 90)
+Sarah <- c(100, 90, 90, 90, 90, 90, 97, 80)
+grade <- function(x){
+min(x)
+x1 <- x[x!=min(x)]
+paste("The average grade is:", round(mean(x1), digits = 2))
+}
+grade(Sarah)
+install.packages("BiocManager")
+if (!requireNamespace("BiocManager"))
+install.packages("BiocManager")
+BiocManager::install()
+installed.packages()
+install.packages("BiocManager")
+install.packages("bio3d")
+install.packages("rmarkdown")
+install.packages("BiocManager")
