@@ -1,0 +1,84 @@
+---
+title: 'Class 6: R Functions'
+author: "The Spanish Inquisition"
+date: "April 18, 2019"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### About
+This is my **class 6** R functions *code* that I wrote for today (April 18th)
+
+```{r}
+read.table("test1.txt",
+           header = T,
+           sep = ",")
+```
+
+```{r}
+read.table("test3.txt"
+)
+```
+
+```{r}
+read.table("test2.txt",
+           sep = "$",
+           header = T)
+```
+
+
+#### Can you improve this analysis code?
+```{r}
+library(bio3d)
+s1 <- read.pdb("4AKE") # kinase with drug
+s2 <- read.pdb("1AKE") # kinase no drug
+s3 <- read.pdb("1E4Y") # kinase with drug
+s1.chainA <- trim.pdb(s1, chain="A", elety="CA")
+s2.chainA <- trim.pdb(s2, chain="A", elety="CA")
+s3.chainA <- trim.pdb(s1, chain="A", elety="CA")
+s1.b <- s1.chainA$atom$b
+s2.b <- s2.chainA$atom$b
+s3.b <- s3.chainA$atom$b
+plotb3(s1.b, typ="l", ylab="Bfactor")
+plotb3(s2.b, sse=s2.chainA, typ="l", ylab="Bfactor")
+plotb3(s3.b, sse=s3.chainA, typ="l", ylab="Bfactor")
+
+```
+
+```{r}
+hc <- hclust(dist(rbind(s1.b, s2.b, s3.b)))
+plot(hc)
+```
+<!-- Lines 69~72 creates a dendrogram as according to the lab handout's example. -->
+
+ This is my simplified function to run bio3d.
+ The simplePDBfunc takes three inputs into consideration.
+ This function is a simplified version of the code above, which takes in protein codes as input, looks them up in Protein Data Bank, and gives data about that protein.
+ The inputs should be a four character PDB (protein data bank) ID, such as 4HHB, or used in Barry's example, 4AKE, 1AKE, 1E4Y.
+Note that the function assumes that 3 proteins will be compared at once.
+```{r}
+
+simplePDBfunc <- function (x, y, z){
+readx <- read.pdb(x)
+x1.chain <- trim.pdb(readx, chain = "A", elety = "CA")
+x1.b <- x1.chain$atom$b
+
+ready <- read.pdb(y)
+y1.chain <- trim.pdb(ready, chain = "A", elety = "CA")
+y1.b <- y1.chain$atom$b
+
+readz <- read.pdb(z)
+z1.chain <- trim.pdb(readz, chain = "A", elety = "CA")
+z1.b <- z1.chain$atom$b
+
+par(mar = c(2,7,1,1))
+par(mfrow = c(3,1))
+plotb3(x1.b, x1.chain, sse = x1.chain, type = "l", col = "black", ylab = "Bfactor")
+plotb3(y1.b, y1.chain, sse = y1.chain, type = "l", col = "red3", ylab = "Bfactor")
+plotb3(z1.b, z1.chain, sse = z1.chain, type = "l", col = "blue3", ylab = "Bfactor")
+}
+```
