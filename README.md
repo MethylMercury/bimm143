@@ -4,7 +4,7 @@ This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm1
 
 - class 05: [R basics, data structuring and input
 
-- class 06: [R graphics, generating plots with R] (https://github.com/chrislee3001/bimm143/blob/master/class06/class_06.pdf)
+- class 06: [R graphics, generating plots with R](https://github.com/chrislee3001/bimm143/blob/master/class06/class_06.pdf)
 
 - class 07: (description of class 07.)
 
