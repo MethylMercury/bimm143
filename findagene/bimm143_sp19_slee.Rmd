@@ -114,3 +114,4 @@ plot.blast(main.seq.anal,
 
 
 # Note to future self: Get VMD on PC, then complete 9 and 10. Should be easy enough?
+pull
