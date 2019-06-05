@@ -12,6 +12,6 @@ This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm1
 
 - class 11: [Structural Bioinformatics]()
 
-- class 14:[Transcriptomics and the analysis of RNA-Seq data]()
+- class 14:[Transcriptomics and the analysis of RNA-Seq data](https://github.com/chrislee3001/bimm143/blob/master/class14/class14.pdf)
 
 - class 15: [Genome annotation and the interpretation of gene lists](https://github.com/chrislee3001/bimm143/blob/master/class15/class15.pdf)
