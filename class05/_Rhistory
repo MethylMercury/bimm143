@@ -1,0 +1,512 @@
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+View(wf_df)
+weight <- data.frame("weight_chart.txt",
+header = T, #Header = F pushes the Headers into the data, and recognizes them as a value rather than a text denotation.
+sep = "",
+quote = "",
+)
+plot(weight$Age, weight$Weight,
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "p",
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "o",
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "l",
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+'o'
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+"o"
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "o"
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "o"
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "o",
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+plot(weight$Age, weight$Weight,
+type = "o",
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+View(weight)
+View(Weight$Age)
+WEight$Age
+weight$Age
+weight$Weight
+Yikes
+gene_feature <- read.table("feature_counts.txt")
+gene_feature
+gene_feature <- read.table("feature_counts.txt", what = "", sep = "", quote = "")
+gene_feature <- read.table("feature_counts.txt", sep = "", quote = "")
+gene_feature <- read.table("feature_counts.txt", sep = "", quote = "", header = T)
+feature.counts
+?sep
+??sep
+?read.table
+gene_feature <- read.table("feature_counts.txt", sep = "s", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "2", quote = "", header = T)
+\t
+??\t
+??"\t"
+?"\t"
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+\t
+?\t
+??\t
+??"\t"
+?"\t"
+?read.table
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+#Classwork in R, April 16
+#2A Line plot
+weight <- read.table("weight_chart.txt",
+header = T, #Header = F pushes the Headers into the data, and recognizes them as a value rather than a text denotation.
+sep = "",
+quote = "",
+)
+plot(weight$Age, weight$Weight,
+type = "o",
+pch = 15,
+cex = 1.5,
+lwd = 2,
+ylim = c(2,10),
+xlab = "Age (months)",
+ylab = "Weight (kgs)",
+main = "Baby Weight",
+)
+#2B Barplot exercise
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = F)
+gene_feature <- read.table("feature_counts.txt", sep = "\n", quote = "", header = T)
+gene_feature
+?barplot
+barplot(gene_feature$Feature, gene_feature$Count)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+barplot(gene_feature$Feature, gene_feature$Count)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature
+view(feat)
+view(gene_feature)
+View(gene)f
+View(gene_feature)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+View(gene_feature)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+View(gene_feature)
+gene_feature <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+gene_feature
+barplot(gene_feature$Feature, gene_feature$Count)
+rm(gene_feature)
+feature.counts
+feat
+feat <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+feat
+barplot(feat)
+?barplot
+feat
+View(feat)
+feat <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+barplot(feat)
+fea
+feat
+View(feat)
+barplot(feat$Feature, feat$Count)
+barplot(feat$Count, feat$Feature)
+barplot(feat$Count)
+par()$mar
+barplot(feat$Count, horiz = T, ylab = "Count", names.arg = feat$Feature, main = "Gene Features", las = 1)
+barplot(feat$Count,
+horiz = T,
+ylab = feat$Feature,
+main = "Gene Features",
+las = 1)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature
+main = "Gene Features",
+las = 1)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(5.1,4.1,4.1,2.1)$mar,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(5.1,4.1,4.1,2.1),
+)
+?oar()
+?par()
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par = 5.1,4.1,4.1,2.1,
+)
+?als
+?las
+??las
+?barplot
+?barplot
+?par
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+cex = 5.1,4.1,4.1,2.1,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+cex.axis = 5.1,4.1,4.1,2.1,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = 5.1,4.1,4.1,2.1,
+)
+par()$Mar
+par()$mar
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = 5.1,7,4.1,2.1,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = 4.1,7,4.1,2.1,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = 4.1,7,4.1,2.1,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = 4.1,10,4.1,2.1,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = 4.1,10,4.1,3,
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4.1,10,4.1,3)),
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4.1,10,4.1,3))
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4.1,6,4.1,3))
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4,6,4,3))
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4,9)
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4,9))
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(mar = c(4,9,2))
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+par(pin = c(4,9,2))
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = c(4,9,2)
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = c(4,11,2)
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = c(4,15,2)
+)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = c(4,15,2,3)
+)
+feat <- read.table("feature_counts.txt", sep = "\t", quote = "", header = T)
+barplot(feat$Count,
+horiz = T,
+names.arg = feat$Feature,
+main = "Gene Features",
+las = 1,
+mar = c(4,20,2,3)
+)
+mnf <- read.table("male_female_counts.txt", sep = "\t", header = T)
+View(mnF)
+View(mnf)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1)
+rainbow()
+?rainbow
+View(mnf)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1
+rainbow(10)
+)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1,
+rainbow(10)
+)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1,
+col = rainbow(10)
+)
+nrow(mnf)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1,
+col = rainbow(nrow(mnf))
+)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1,
+col = c(blue2, red2)
+#col = rainbow(nrow(mnf))
+)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+main = "Dudes vs. Gals",
+las = 1,
+col = c("blue2", "red2")
+#col = rainbow(nrow(mnf))
+)
+barplot(mnf$Count,
+horiz = F,
+names.arg = mnf$Sample,
+ylab = "Counts",
+main = "Dudes vs. Gals",
+las = 2,
+col = c("blue2", "red2")
+#col = rainbow(nrow(mnf))
+)
+updown <- read.delim("up_down_expression.txt")
+View(updown)
+rm(updown)
+genes <- read.delim("up_down_expression.txt")
+nrows(genes)
+nrow(gene)
+nrow(genes)
+table(genes$State)
+plot(genes$Condition1, genes$Condition2)
+plot(genes$Condition1, genes$Condition2, col = "red2")
+plot(genes$Condition1, genes$Condition2, xlab = "Condition 1", ylab = "Condition 2")
+plot(genes$Condition1,
+genes$Condition2,
+xlab = "Condition 1",
+ylab = "Condition 2")
+plot(genes$Condition1,
+genes$Condition2,
+xlab = "Condition 1",
+ylab = "Condition 2",
+col = genes$State)
+palette()
+levels(State)
+levels()
+levels(gene$State)
+levels(genes$State)
+palette(c("red", "gray", "green3"))
+plot(genes$Condition1,
+genes$Condition2,
+xlab = "Condition 1",
+ylab = "Condition 2",
+col = genes$State)
+source('~/R/BIMM_143/bimm143_05_rstats/lab_handout_bimm143.R', echo=TRUE)
+meth <- read.delim("expression_methylation.txt")
+View(meth)
+meth <- read.delim("expression_methylation.txt")
+View(meth)
+nrow(meth)
+plot(meth$gene.meth,
+meth$expression,
+)
+source('~/R/BIMM_143/bimm143_05_rstats/lab_handout_bimm143.R', echo=TRUE)
+source('~/R/BIMM_143/bimm143_05_rstats/lab_handout_bimm143.R', echo=TRUE)
+source('~/R/BIMM_143/bimm143_05_rstats/class_05_Sanghun_Lee.R', echo=TRUE)
+source('~/R/BIMM_143/bimm143_05_rstats/class_05_Sanghun_Lee.R', echo=TRUE)
+setwd("bimm143_05_rstats")
+source('~/R/BIMM_143/bimm143_05_rstats/class_05_Sanghun_Lee.R', echo=TRUE)
+source('~/R/BIMM_143/bimm143_05_rstats/class_05_Sanghun_Lee.R', echo=TRUE)

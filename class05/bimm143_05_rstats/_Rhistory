@@ -1,0 +1,512 @@
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+rm(ball)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+print("---------------------------------------------")
+print("Activities 1-3")
+urn <- numeric(93) #A vector with a length of 93 numbers
+#Will store the numbers in them.
+for(i in 1:1321){
+urnNum <- ceiling(runif(1, 0, 93))
+urn[urnNum] <- urn[urnNum] + 1
+} #This if else statement is necessary to keep the mean same.
+#I thought at first it was redundant b/c of line 18, but apparently not?
+mean(urn)
+var(urn)
+# Activity 2, Histogram
+hist(urn,
+freq = T,
+col = "blue3"
+)
+#Activity 3, index of dispersion
+#so just....
+D <- var(urn) / mean(urn)
+print(D)
+urn
+hist(urn, 93,
+freq = T,
+col = "blue3"
+)
+hist(urn, 93,
+freq = T,
+col = "blue3"
+)
+hist(urn, 93,
+freq = T,
+xlab = "Number of balls in an urn",
+ylab = "Frequency",
+col = "blue3"
+)
+hist(urn, 1321,
+freq = T,
+xlab = "Number of balls in an urn",
+ylab = "Frequency",
+col = "blue3"
+)
+hist(urn,
+freq = T,
+xlab = "Number of balls in an urn",
+ylab = "Frequency",
+col = "blue3"
+)
+throwBallsIntoUrns <- function(nBalls, nUrns){
+urn <- numeric(nUrns) #Function is Function #1 but just reworded
+for(i in 1:nBalls){
+urnNum <- ceiling(runif(1, 0, nUrns))
+urn[urnNum] <- urn[urnNum] + 1
+}
+IOD <- var(urn) / mean(urn)
+return(IOD)
+}
+throwBallsIntoUrns(1321, 93)
+throwBallsIntoUrns <- function(nBalls, nUrns){
+urn <- numeric(nUrns) #Function is Function #1 but just reworded
+for(i in 1:nBalls){
+urnNum <- ceiling(runif(1, 0, nUrns))
+urn[urnNum] <- urn[urnNum] + 1
+}
+IOD <- var(urn) / mean(urn)
+return(mean(urn))
+}
+throwBallsIntoUrns(1321,93)
+throwBallsIntoUrns <- function(nBalls, nUrns){
+urn <- numeric(nUrns) #Function is Function #1 but just reworded
+for(i in 1:nBalls){
+urnNum <- ceiling(runif(1, 0, nUrns))
+urn[urnNum] <- urn[urnNum] + 1
+}
+IOD <- var(urn) / mean(urn) #Index of Dispersion. In Act #3, I denoted it with D.
+return(IOD)
+}
+U <- numeric(1000)
+for(i in 1:U){
+print("Yikes")
+}
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(100, 100) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(100, 100) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+freq = T,
+col = "red3")
+?hist
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(100, 100) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+freq = F,
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+freq = F,
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+freq = F,
+main = "Histogram of Activity #5",
+col = "red3")
+hist(urn,
+freq = T,
+xlab = "Number of balls in an urn",
+ylab = "Frequency",
+main = "Histogram of Activity #2",
+col = "blue3"
+)
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+freq = F,
+main = "Histogram of Activity #5",
+col = "red3")
+hist(U,
+freq = T,
+main = "Histogram of Activity #5",
+col = "red3")
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+U
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+numUrns <- 100
+numBalls <- 300
+probility <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,numUrns))
+}
+numUrns <- 100
+numBalls <- 300
+probility <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,numUrns))
+numUrns[uN] <- numUrns[uN] +1
+p[uN] <- (1/numUrns) + (1/numUrns-i)
+}
+numUrns <- 100
+numBalls <- 300
+probility <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,numUrns))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/numUrns-i)
+}
+numUrns <- 100
+numBalls <- 300
+probability <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,numUrns))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/numUrns-i)
+}
+rm(probility)
+numUrns <- numeric(100)
+numBalls <- 300
+probability <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,numUrns))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/numUrns-i)
+}
+numUrns <- numeric(100)
+numBalls <- 300
+probability <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,100))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/numUrns-i)
+}
+numUrns
+probability
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,100))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/i-numUrns)
+}
+numUrns <- numeric(100)
+numBalls <- 300
+probability <- numeric(numUrns) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,100))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/i-numUrns)
+}
+probability <- numeric(numUrns) #probability vector
+numUrns <- numeric(100)
+numBalls <- 300
+probability <- numeric(100) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,100))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/i-numUrns)
+}
+numUrns <- numeric(100)
+numBalls <- 300
+probability <- numeric(100) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,100))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + 1
+}
+probability
+numUrns <- numeric(100)
+numBalls <- 300
+probability <- numeric(100) #probability vector
+for(i in 1:numBalls){
+uN <- ceiling(runif(1,0,100))
+numUrns[uN] <- numUrns[uN] +1
+probability[uN] <- (1/numUrns) + (1/Urns)
+}
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+U <- numeric(1000)
+for(i in 1:1000){
+U <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+source('~/R/bieb_143/Week3WednesdayHomework_Template.R', echo=TRUE)
+source('~/R/bieb_143/Week3WednesdayHomework_Template.R', echo=TRUE)
+print("---------------------------------------------")
+U <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+U[i] <- throwBallsIntoUrns(50, 50) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+U[i] <- throwBallsIntoUrns(randNum, randNum) #U is a vector that will store our index
+#of dispersion in it.
+}
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+U[i] <- throwBallsIntoUrns(randNum, randNum) #U is a vector that will store our index
+#of dispersion in it.
+}
+mean(U)
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+mean(U)
+print("---------------------------------------------")
+print("Activities 4-5")
+throwBallsIntoUrns <- function(nBalls, nUrns){
+urn <- numeric(nUrns) #Function is Function #1 but just reworded
+for(i in 1:nBalls){
+urnNum <- ceiling(runif(1, 0, nUrns))
+urn[urnNum] <- urn[urnNum] + 1
+}
+IOD <- var(urn) / mean(urn) #Index of Dispersion. In Act #3, I denoted it with D.
+return(IOD)
+}
+# Question 5 asks you to think about the relationship between mean and variance.
+# Type your answers in the blank print statement below
+print("---------------------------------------------")
+U <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+U[i] <- throwBallsIntoUrns(randNum, randNum) #U is a vector that will store our index
+#of dispersion in it.
+}
+mean(U)
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+U[i] <- throwBallsIntoUrns(randNum, randNum) #U is a vector that will store our index
+#of dispersion in it.
+}
+mean(U)
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U
+mean(U)
+is.num(U)
+?is.
+?is
+mean(1:10)
+Z <- ceiling(randif(1,0,10))
+Z <- ceiling(runif(1,0,10))
+mean(Z)
+Z <- numeric(10)
+Z <- ceiling(runif(10,0,10))
+mean(Z)
+U
+View(throwBallsIntoUrns)
+throwBallsIntoUrns(763, 763)
+throwBallsIntoUrns(762, 762)
+U <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+U[i] <- throwBallsIntoUrns(randNum, randNum) #U is a vector that will store our index
+#of dispersion in it.
+}
+mean(U)
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U
+U <- numeric(1000)
+URN5 <- numeric(1000)
+for(i in 1:1000){
+randNum <- ceiling(runif(1, 0, 1000))
+URN5[randNum] <- URN5[randNum] + 1
+Fano <- var(URN5) / mean (URN5)
+U[i] <- Fano
+}
+#U is a vector that will store our index
+#of dispersion in it.
+mean(U)
+hist(U,
+main = "Histogram of Activity #5",
+col = "red3")
+U
