@@ -10,8 +10,6 @@ This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm1
 
 - class 10: [description of class 10.] (link to take the person to class 10)
 
-- class 11:
+- class 11: [Structural Bioinformatics]()
 
-- class 12:
-
-- class 13:
+- class 15: [Genome annotation and the interpretation of gene lists](https://github.com/chrislee3001/bimm143/blob/master/class15/class15.pdf)
