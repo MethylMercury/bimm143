@@ -2,8 +2,6 @@
 
 This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm143_S19/) at UC San Diego. Works revolved around data visualization, graph construction, and usage of Bioinformatics program, such as SeaView, MUSCLE, FASTQ, etc.
 
-For more information on my work, check out the class link above.
-
 
 
 - class 05: [R basics, data structuring and input](https://htmlpreview.github.io/?https://github.com/chrislee3001/bimm143/blob/master/class05/bimm143_05_rstats/class_05_Sanghun_Lee.html)
