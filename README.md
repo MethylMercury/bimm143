@@ -1,6 +1,8 @@
 # bimm143
 
-This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm143_S19/) at UC San Diego!
+This is my classwork from [BIMM 143 Spring 2019](https://bioboot.github.io/bimm143_S19/) at UC San Diego. Works revolved around data visualization, graph construction, and usage of Bioinformatics program, such as SeaView, MUSCLE, FASTQ, etc.
+
+For more information on my work, check out the class link above.
 
 
 
