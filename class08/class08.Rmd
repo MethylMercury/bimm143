@@ -1,0 +1,235 @@
+---
+title: "class08"
+author: "Sanghun Lee"
+date: "June 10, 2019"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Visualizing data with UK food data. Principal Component Analysis (PCA) is used here.
+
+
+```{r}
+uk.foods <- read.csv("UK_foods.csv")
+
+
+```
+
+Viewing and trimming our UK foods data using R
+```{r}
+dim(uk.foods)
+
+summary(uk.foods) # Presence of "x" in the first column.
+
+rownames(uk.foods) <- uk.foods[,1]
+uk.foods <- uk.foods[,-1]
+
+head(uk.foods) # x is gone.
+```
+
+The rownames function allows us to set the row names of our data frame as the first column values of this data frame. In this case, that would be the various kinds of food (Cheese, Carcass_meat, etc.).
+
+After that, we remove the troublesome first row, with the header X and the numbers for rows.
+
+The following code accomplishes the exact same goal, albeit more efficient.
+```{r}
+uk.foods <- read.csv("UK_foods.csv", row.names = 1)
+
+uk.foods
+```
+
+#### Class Question: Which approach to solving the ‘row-names problem’ mentioned above do you prefer and why? Is one approach more robust than another under certain circumstances?
+
+The first code chunk (uk.foods <- uk.foods[,-1]) can delete columns that we may need.
+
+The second code chunk (read.csv(file.name, row.names = n)) can be difficult to use if the data layout is more complicated than the example.
+
+I personally prefer the 2nd method.
+
+
+### Spotting major difference and trends
+
+```{r}
+barplot(as.matrix(uk.foods), beside = T, col = rainbow(nrow(uk.foods)))
+
+```
+
+#### Class question: Changing what optional argument in the above barplot() function results in the following plot?
+
+The "beside" parameter. This parameter allows us to visualize each data 'besides' each other. Setting this to FALSE will produce a stacked column chart.
+
+```{r}
+#barplot(as.matrix(uk.foods), beside = F, col = rainbow(nrow(uk.foods)))
+```
+
+#### Class question: Generating all pairwise plots may help somewhat. Can you make sense of the following code and resulting figure? What does it mean if a given point lies on the diagonal for a given plot?
+
+```{r}
+pairs(uk.foods, col = rainbow(10), pch = 16)
+```
+
+
+### PCA to the rescue
+
+Usage of prcomp() function and constructing a PCA dataset.
+
+```{r}
+pca <- prcomp(t(uk.foods))
+summary(pca)
+```
+t() function is the "transpose" fucntion. This switches the row and the columns in a data frame.
+
+
+Generating a plot of PC1 vs. PC2.
+
+```{r}
+plot(pca$x[,1], pca$x[,2], xlab = "PC1", ylab = "PC2", xlim = c(-270, 500),
+     main = "PCA of UK's Food Data")
+
+colvec = c("yellow3", "red3", 'blue3', 'green3')
+
+text(pca$x[,1], pca$x[,2], colnames(uk.foods), col = colvec)
+```
+
+With this chunk, I am understanding how much variation in each PC accounts for.
+
+```{r}
+v <- round(pca$sdev^2 / sum(pca$sdev^2) * 100)
+v
+
+z <- summary(pca)
+z$importance
+```
+
+From the R code chunk, we can see that PC1 accounts for 67% of the variation in the data, and PC2 accounts for 29%. Generally speaking, almost all the variation in the data will be captured by PC1 and PC2.
+
+
+Graphing the variation in our PCA.
+
+```{r}
+barplot(v, xlab = "Principal Component", ylab = "Percent Variation")
+```
+
+### Digging deeper into understanding PCA.
+
+```{r}
+par(mar = c(10, 3, 0.35, 0))
+barplot(pca$rotation[,1], las = 2)
+```
+
+par(mar = c()) sets the plot's dimensions. This is to clean up our barplot or plot function.
+
+pca$rotation, or rotation, is called "loading scores". This loading scores help us to determine which components have the largest effect on where they are plotted in the PCA plot.
+
+So here, with pca$rotation[,1], we see that soft drinks have positive but minimal effect in affecting PC1.
+With pca$rotation[,2], however, we see that soft drinks actually have a largely negative effect on PC2.
+
+```{r}
+(barplot(pca$rotation[,2], las = 2))
+```
+
+Constructing Biplots
+
+```{r}
+biplot(pca)
+```
+
+A biplot represents a sample as a point on the graph (Eng, Scot, Wales, N.Ire), and variables as a vector (cheese, carcass_meat, confectionary, etc.).
+
+
+
+
+### PCA of RNA-Seq data
+
+```{r}
+rna.data <- read.csv("expression.csv", row.names = 1)
+head(rna.data)
+```
+
+Class question: How many genes and samples are in this data set?
+
+```{r}
+nrow(rna.data)
+ncol(rna.data)
+```
+We have 100 genes each with 10 samples.
+
+
+
+#### Generating a plot for this new RNA-Seq data.
+
+```{r}
+pca.rna <- prcomp(t(rna.data), scale = T)
+
+plot(pca.rna$x[,1], pca.rna$x[,2],
+     xlab = "PC1",
+     ylab = "PC2")
+```
+
+Interesting how there is a clear divide between two groups of data frame.
+
+
+PCA variance percentage calculation
+```{r}
+pca.var <- pca.rna$sdev^2
+pca.var.per <- round(pca.var/sum(pca.var)*100, 1)
+
+pca.var.per
+```
+
+
+Barplot of PCA variance percentage
+```{r}
+barplot(pca.var.per, main = 'Scree plot',
+        xlab = "Principal Component",
+        ylab = "Percent Variation")
+```
+We can see from this that all the action (variance) is in PC1. PC1 accounts for almost 93% of the variance in the data.
+
+```{r}
+colvec <- colnames(rna.data)
+colvec[grep("wt", colvec)] <- "red"
+colvec[grep("ko", colvec)] <- "blue"
+
+plot(pca.rna$x[,1], pca.rna$x[,2], col = colvec, pch = 16,
+     xlab = paste0("PC1(", pca.var.per[1], "%)"),
+     ylab = paste0("PC2(", pca.var.per[2], "%)"))
+
+text(pca.rna$x[,1], pca.rna$x[,2], labels = colnames(rna.data), pos = c(rep(4,5), rep(2,5)))
+```
+
+
+Easier method to color in our dot plot.
+```{r}
+sample.type <- substr(colnames(rna.data), 1,2)
+sample.type
+
+plot(pca.rna$x[,1], pca.rna$x[,2], col = as.factor(sample.type), pch = 16)
+```
+
+Finding genes that contribute most to our PCA plot.
+```{r}
+gene.scores <- abs(pca.rna$rotation[,1])
+gene.scores.ranked <- sort(gene.scores, decreasing = T)
+
+top.10.genes <- names(gene.scores.ranked[1:10])
+top.10.genes
+```
+
+The above genes are affected by an abs() function, which applies an absolute value to all the values in a vector.
+
+This is because a gene with a rotation score of 2.6 has a lesser effect on PCA when compared to a gene with a rotation score of -10.6.
+
+#### Conclusion 
+
+Lecture 08 was a great lesson in data visualization and analysis with R. Principal Component Analysis can be done with R, and I learned the key components of PCA.
+
+PCA clusters like data points together. Since Principal Components 1 and 2 explain almost all of the variation in a data, an analyst can use R to see the clustering of datapoints on a plot. PC1 captures the direction where the most variation is, and PC2 the 2nd most variation, and so on.
+
+Additionally, biplots can be used to see not only the sample (represented by a point), but the variables in a dataset (represented by a vector).
